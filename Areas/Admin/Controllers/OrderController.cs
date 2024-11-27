@@ -20,5 +20,10 @@ namespace CK_ASP_NET_CORE.Areas.Admin.Controllers
 		{
 			return View(await _dataContext.OrderModels.OrderByDescending(p => p.Id).ToListAsync());
 		}
-	}
+        public async Task<IActionResult> ViewOrder(string orderCode)
+        {
+			var Detail = await _dataContext.OrderDetails.Include(od => od.product).Where(od => od.OrderCode == orderCode).ToListAsync();
+            return View(await _dataContext.OrderModels.OrderByDescending(p => p.Id).ToListAsync());
+        }
+    }
 }

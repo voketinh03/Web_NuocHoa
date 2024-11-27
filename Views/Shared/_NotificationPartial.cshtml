@@ -1,10 +1,10 @@
 ﻿@if(TempData["success"]!= null){
     <div class=" alert alert-success notification">
-    @TempData["success"]
+    @TempData["success"] @*  màu xanh *@
     </div>
 }
 @if(TempData["error"]!= null){
     <div class=" alert alert-danger notification">
-        @TempData["error"]
+        @TempData["error"] @* màu đỏ *@
     </div>
 }
